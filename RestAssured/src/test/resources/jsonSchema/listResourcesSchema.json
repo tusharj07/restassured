@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "required": [
+    "page",
+    "per_page",
+    "total",
+    "total_pages",
+    "data",
+    "support"
+  ],
+  "properties": {
+    "page": {
+      "$id": "#/properties/page",
+      "type": "integer"
+    },
+    "per_page": {
+      "$id": "#/properties/per_page",
+      "type": "integer"
+    },
+    "total": {
+      "$id": "#/properties/total",
+      "type": "integer"
+    },
+    "total_pages": {
+      "$id": "#/properties/total_pages",
+      "type": "integer"
+    },
+    "data": {
+      "$id": "#/properties/data",
+      "type": "array",
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/data/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/data/items/anyOf/0",
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "year",
+              "color",
+              "pantone_value"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/data/items/anyOf/0/properties/id",
+                "type": "integer"
+              },
+              "name": {
+                "$id": "#/properties/data/items/anyOf/0/properties/name",
+                "type": "string"
+              },
+              "year": {
+                "$id": "#/properties/data/items/anyOf/0/properties/year",
+                "type": "integer"
+              },
+              "color": {
+                "$id": "#/properties/data/items/anyOf/0/properties/color",
+                "type": "string"
+              },
+              "pantone_value": {
+                "$id": "#/properties/data/items/anyOf/0/properties/pantone_value",
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "support": {
+      "$id": "#/properties/support",
+      "type": "object",
+      "required": [
+        "url",
+        "text"
+      ],
+      "properties": {
+        "url": {
+          "$id": "#/properties/support/properties/url",
+          "type": "string"
+        },
+        "text": {
+          "$id": "#/properties/support/properties/text",
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
